@@ -1,0 +1,33 @@
+.row{
+   border-top: 1px solid #808080;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-bottom: 10px;
+}
+
+.col-sm-4{
+   height: 450px;
+}
+
+.img-circle{
+   height: 200px;
+   width: 200px;
+   margin: 0 auto;
+   position: relative;
+   top: 40px;
+   border: 2px solid white;
+}
+
+.text-center{
+   font-family: helvetica;
+   color: white;
+   position: relative;
+   top: 50px;
+}
+
+span{
+   font-weight: bold;
+   background-color: #e6e6e6;
+   color: #3FA2B2;
+   padding: 3px 7px 3px 7px;
+}
