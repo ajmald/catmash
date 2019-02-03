@@ -3,21 +3,30 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CatsComponent } from './cats/cats.component';
 import { MessagesComponent } from './messages/messages.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LikeCatComponent } from './likecat/likecat.component';
+import { CatlistComponent } from './catlist/catlist.component';
+import { CatsService } from './cats.service';
+import { MasonryGalleryModule } from 'ngx-masonry-gallery';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatsComponent,
-    MessagesComponent
+    MessagesComponent,
+    NavbarComponent,
+    LikeCatComponent,
+    CatlistComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MasonryGalleryModule
   ],
-  providers: [],
+  providers: [CatsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

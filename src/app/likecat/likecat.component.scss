@@ -1,0 +1,45 @@
+.container{
+    &-bg{
+      height: auto;
+      min-height: 100vh;
+      &--grey{
+        &-light{
+          background-color: lightgray;
+          padding-bottom: 4em;
+        }
+      }
+      &--white{
+        background-color: white;
+        padding-bottom: 4em;
+      }
+      &-forty{
+        margin-top: 30%;
+      }
+    }
+  }
+  .voting-content{
+    &:before{
+      content: 'Votez pour le plus beau chat ..ou chien :)?';
+      position: absolute;
+      top: 3.5em;
+      right: 0;
+      left: 0;
+      margin-left: auto;
+      margin-right: auto;
+      z-index: 2;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+  }
+  .menu-container{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    .menu-content{
+      background-color: white;
+      //text-align: center;
+    }
+  }

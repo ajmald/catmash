@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~bootstrap/scss/bootstrap-reboot.scss";
+@import "assets/css/font-awesome.css";
+
+.main-content{
+  .row{
+    margin-left: 0;
+    margin-right: 0;
+  }
+  &:before{
+    content:url("assets/img/logo1.png");
+    position: absolute;
+    top: 1em;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    text-align: center;
+  }
+}
+.rounded-img{
+  border-radius: 10%;
+}
+.box-click{
+  cursor: pointer;
+}
+.border{
+  &-grey{
+    border: .5px solid grey;
+  }
+}
+.no{
+  &-border{
+    &--bottom{
+      border-bottom: .5px solid transparent;
+    }
+  }
+}
+
+.nav-link{
+  &.active{
+    .fa-danger{
+      color: #dc3545 !important;
+    }
+    .fa-primary{
+      color: #007bff !important;
+    }
+  }
+}

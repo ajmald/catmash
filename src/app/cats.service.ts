@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import {Image} from './image';
+import { Cat } from './cat';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { MessageService } from './message.service';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -15,32 +15,42 @@ const httpOptions = {
 })
 export class CatsService {
 
+  private baseUrl = "https://catmash-api-rest.herokuapp.com/";
+  private proxyURL = "https://ng-cors-proxy.herokuapp.com/";
 
   private imagesUrl = './assets/cats.json';
-  // Cors is not enabled at Atelier, so this is not possible
-  //private imagesUrl = 'https://latelier.co/data/cats.json';
+  private catsUrl = this.proxyURL + this.baseUrl;
 
   constructor(private http: HttpClient, private messageService: MessageService) {
-    //The below call works as well but I will not use it.
-    /* this.getJSON().subscribe(data => {
-            console.log(data)
-        });
-        */
   }
 
-  getAllCats (): Observable<Image[]> {
-      return this.http.get<Image[]>(this.imagesUrl)
-        .pipe(
-          tap(_ => this.log('fetched images')),
-          catchError(this.handleError('getAllCats', []))
-        )
-    }
+  getData() {
+    console.log(`Fetching data from web service ${this.catsUrl}`)
+    return this.http
+               .get(this.catsUrl + "cats");
+  }
 
+//Fetching from Json if web service fails
 
-public getJSON():Observable<any> {
-  return this.http.get(this.imagesUrl)
+/*
+getAllCats (): Observable<Cat[]> {
+  return this.http.get<Cat[]>(this.catsUrl + "cats")
+    .pipe(
+      tap(_ => this.log('fetched images')),
+      catchError(this.handleError('getAllCats', []))
+    )
 }
+*/
 
+  getAllCats(){
+    return this.http.get(this.catsUrl + "cats");
+  }
+
+ 
+
+  voteCat(catID){
+    return this.http.post(this.catsUrl + "cats/" + catID, '');
+  }
 
  private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {

@@ -1,0 +1,30 @@
+<div class="main-content">
+  <div class="row voting-content" *ngIf="catList.length > 0">
+    <div class="col-6 container-bg container-bg--white text-right pr-2">
+      <div class="row container-bg-forty">
+        <div class="col-6 offset-3 text-center box-click">
+          <i class="fa fa-heart-o fa-3x text-danger pb-3"></i>
+          <img class="img-fluid rounded-img" src="{{randomUrl1}}" (click)="clickVote(randomId1)" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-6 container-bg container-bg--grey-light pl-2">
+      <div class="row container-bg-forty">
+        <div class="col-6 offset-3 text-center box-click" >
+          <i class="fa fa-heart-o fa-3x text-danger pb-3"></i>
+          <img class="img-fluid rounded-img" src="{{randomUrl2}}" (click)="clickVote(randomId2)" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row no-gutters menu-container">
+    <div class="col-4 offset-4 menu-content">
+      <div class="row border-grey no-border--bottom pt-2">
+        <div class="col-6">
+          <p><a class="text-dark" [routerLink]="['/cat-list']"><i class="fa fa-list text-primary"></i> List des chats</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
