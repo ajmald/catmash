@@ -61,7 +61,7 @@ export class LikeCatComponent implements OnInit {
     }
 
   public get cats(): IMasonryGalleryImage[] {
-    this.getListCat();
+    //this.getListCat();
     return this.catVotedList.map(m => <IMasonryGalleryImage>{
       imageUrl: m.url,
       alt: m.id
