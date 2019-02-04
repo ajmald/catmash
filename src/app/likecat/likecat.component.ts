@@ -48,6 +48,7 @@ export class LikeCatComponent implements OnInit {
         this.catList = res.images;
         this.randomIndex1= Math.floor(Math.random() * this.catList.length);
           this.randomIndex2 = Math.floor(Math.random() * this.catList.length);
+          this.randomIndex1 == this.randomIndex2 ? this.randomIndex1= Math.floor(Math.random() * this.catList.length):this.randomIndex1;
           this.randomId1 = this.catList[this.randomIndex1].id;
           this.randomId2 = this.catList[this.randomIndex2].id;
           this.randomUrl1 = this.catList[this.randomIndex1].url;
